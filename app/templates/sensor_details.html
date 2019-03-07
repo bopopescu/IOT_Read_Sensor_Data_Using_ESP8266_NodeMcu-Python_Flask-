@@ -1,0 +1,71 @@
+<html>
+<head>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<style>
+   body{background-color:#ABEBC6;}
+   .title{background-color:#150B7A; color:white;text-align:center;}
+   table{border-collapse:collapse;}
+   tr,td{border:1px solid blue;}
+   td:nth-child(1){width:40px;}
+   td:nth-child(4){width:200px;}
+   td{background-color:pink;width:120px;height:40px;text-align:center;}
+   th{background-color:green;width:120px;height:40px;text-align:center;color:white;}
+   a{color:white;}
+   label{color:blue;font-size:22px;}
+ </style>
+
+ <body>
+<div class="row title">
+                <div class="col-sm-12">
+                    <h1> View Sesnor Details using Python Flask Applications </h1>
+                </div>
+</div>
+
+<div class="container-fluid">    
+        
+    <div class="row">
+        <div class="col-xs-4">
+            <br>
+                 
+
+                <form action="/">
+                    <div class="form-group">
+                        <label>Starting Date</label>
+                        <input name="start" class="form-control" type="date" > 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Ending Date</label>
+                        <input name="end"    class="form-control"  type="date"  > 
+                    </div>
+
+                    <input type="submit" class="btn-primary" name="details" value="view">
+                </form>
+
+        </div>
+
+        <div class="col-xs-8">
+            <br>
+                {% if success=='success': %}
+                <table border ="1" class="table table-hover">
+    
+                    <tr> <th>Id</th> <th>Distance</th><th>Weight</th><th>Timing</th></tr>
+    
+                {% for i in home %}
+                <tr> 
+                        <td>{{ i[0]  }}</td>
+                        <td>{{ i[1]  }}</td>
+                        <td>{{ i[2]  }}</td>
+                        <td>{{ i[3]  }}</td>
+                    
+                    </tr>
+                {% endfor %}
+                </table>
+                {% endif %}
+
+        </div>
+
+    </div>
+    
+</div>
+</body>
