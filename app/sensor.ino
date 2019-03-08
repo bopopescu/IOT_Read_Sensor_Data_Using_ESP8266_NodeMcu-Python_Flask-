@@ -1,4 +1,9 @@
 #include <ESP8266WiFi.h>
+#include "DHT.h"        // including the library of DHT11 temperature and humidity sensor
+#define DHTTYPE DHT11   // DHT 11
+
+#define dht_dpin 0 //D3
+DHT dht(dht_dpin, DHTTYPE); 
 
 const char* ssid = "infocus"; 
 const char* password = "hariharan";
@@ -6,10 +11,7 @@ const char* host = "192.168.43.183";
 
 
 void setup() {
-// you can feed the sensor data to esp8266NodeMCU 
-
- pinMode(D0, INPUT);
- pinMode(A0, INPUT);
+ dht.begin();
  Serial.begin(115200);
  delay(100);
  
@@ -32,8 +34,8 @@ void setup() {
 
 void loop() {
 
- int distance=digitalRead(D0);
- int weight=analogRead(A0);
+ float h = dht.readHumidity();
+ float t = dht.readTemperature();      
  
  Serial.print("connecting to ");
  Serial.println(host);
@@ -48,10 +50,10 @@ void loop() {
      //String url = "/projects/index.html";
      String url = "/";
      
-     url +="?distance=";
-     url +=distance;
-     url +="&weight=";
-     url +=weight;
+     url +="?hum=";
+     url +=h;
+     url +="&temp=";
+     url +=t;
      url +="&device=";
      url +="esp";
      
@@ -74,8 +76,3 @@ void loop() {
  Serial.println("closing connection");
 
 }
-
-
- 
-  
- 
