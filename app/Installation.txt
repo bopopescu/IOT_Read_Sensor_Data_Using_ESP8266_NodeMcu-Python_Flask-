@@ -1,3 +1,11 @@
+For Arduino Libraries:---
+
+// - Adafruit Unified Sensor Library: https://github.com/adafruit/Adafruit_Sensor
+// - DHT Sensor Library: https://github.com/adafruit/DHT-sensor-library
+
+
+
+
 Flask Installation:-
 Open your command prompt follow the steps to install virtualenv and flask to run Flask Wep Applications
 
@@ -12,13 +20,13 @@ Open your command prompt follow the steps to install virtualenv and flask to run
 
 5. D:\myfolder\ cd venv     (move inside the venv folder)
 
-6. D:\myfolder\ venv\ mkdir myapp        (create new folder as myapp  )
+6. D:\myfolder\ venv\ mkdir app        (create new folder as app  )
 
-7. D:\myfolder\ venv\ cd myapp        ( move inside the folder)
+7. D:\myfolder\ venv\ cd app        ( move inside the folder)
 
-8. D:\myfolder\venv \myapp\ touch app.py (create python app file)
+8. D:\myfolder\venv \app\ touch app.py (create python app file)
 
-9. D:\myfolder\venv \myapp \cd.. (go back)
+9. D:\myfolder\venv \app \cd.. (go back)
 
 10.D:\myfolder\ venv\ cd Scripts (go into scripts)
 
@@ -28,13 +36,14 @@ Open your command prompt follow the steps to install virtualenv and flask to run
 
 13. D:\myfolder\ venv\ pip install flask
 
-14.D:\myfolder\ venv\  cd myapp   (move into the myapp folder) 
+14.D:\myfolder\ venv\  cd app   (move into the app folder) 
 
-15. D:\myfolder\ venv\ myapp\ python app.py       (run the app)
+15. D:\myfolder\ venv\ app\ python app.py       (run the app)
 
 16. Check in your browser: http://127.0.0.1:5000/
 
-To Change IP Address: python -m flask run --host=172.16.3.64
+To Change IP Address: python -m flask run --host=192.168.43.183  ( command promt--> ipconfig select wireless )
 
-Note:-
+
+Query:-
 Any query and help mail to : guhang990@gmail.com
